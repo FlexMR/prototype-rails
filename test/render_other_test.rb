@@ -165,8 +165,8 @@ class RenderOtherTest < ActionController::TestCase
     pre = %[$$(".product").each(function(value, index) {
       new Effect.Highlight(element,{});
       new Effect.Highlight(value,{});
-      Sortable.create(value, {onUpdate:function(){new Ajax.Request('/render_other_test/test/order', {asynchronous:true, evalScripts:true, parameters:Sortable.serialize(value) + '&authenticity_token=' + encodeURIComponent('].gsub(/^\s+/, '')
-    post = %[')})}});\nnew Draggable(value, {});\n});]
+      Sortable.create(value, {onUpdate:function(){new Ajax.Request('/render_other_test/test/order', {asynchronous:true, evalScripts:true, parameters:Sortable.serialize(value)
+    post = %[})}});\nnew Draggable(value, {});\n});]
 
     get :enum_rjs_test
     assert_match pre, @response.body
